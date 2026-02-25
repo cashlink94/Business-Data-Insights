@@ -1,0 +1,10 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv('../data/customers.csv')
+print(df.head())
+
+# Scatter plot Age vs Spending
+df.plot(x='Age', y='Spending', kind='scatter', title="Customer Spending by Age")
+plt.show()

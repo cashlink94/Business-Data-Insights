@@ -1,0 +1,14 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv('../data/sales_data.csv')
+print(df.head())
+
+# Total sales by product
+product_sales = df.groupby('Product')['Sales'].sum()
+print("\nTotal Sales by Product:\n", product_sales)
+
+# Plot sales by product
+product_sales.plot(kind='bar', title="Total Sales by Product")
+plt.show()
